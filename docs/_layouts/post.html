@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<main>
+  <article>
+    <p>Posted: {{ page.date | date: "%Y-%m-%d" }}</p>
+    <h2>{{ page.title }}</h2>
+    <hr />
+    <div>
+      {{ content }}
+    </div>
+  </article>
+  <nav>
+    <div>
+      {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}" title="Previous Post: {{page.previous.title}}">
+          <img src="{{ "/assets/icons/circle-left.svg" | relative_url }}" height="18" width="18" />
+          <span>PREV</span>
+        </a>
+      {% endif %}
+    </div>
+    <div class="center_blank"></div>
+    <div>
+      {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}" title="Next Post: {{page.next.title}}">
+          <span>NEXT</span>
+          <img src="{{ "/assets/icons/circle-right.svg" | relative_url }}" height="18" width="18" />
+        </a>
+      {% endif %}
+    </div>
+  </nav>
+</main> 
